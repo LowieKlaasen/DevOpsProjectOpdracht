@@ -29,14 +29,14 @@ De API draait in een subfolder /api.
 
 ## Opdracht:
 
-1. Connecteer naar je Debian Linux omgeving
-1. Clone deze repository
-1. Bouw een container voor de back-end. De back-end draait op NodeJS. Kies zelf een tag.
-1. Bouw een container voor de front-end. De front-end draait op Nginx. Je maakt gebruik van nginx. Je kan gebruik maken van de standaard configuratie.
-1. Maak een docker compose file aan die deze containers refereert. Expose je front-end op poort 80.
-1. Voeg Mysql toe aan je netwerk dmv een docker container. Je maakt gebruik van een mysql image. Voeg disk mappings toe zodat de state van je mysql container bewaard blijft.
-1. De repository bevat een bestand init.sql. Zorg dat dit wordt uitgevoerd bij de start van de Mysql container. 
-1. Configureer de API zodat die deze MySql databank gebruikt.
-1. Installeer Traefik als Reverse proxy op je omgeving.
-1. Configureer ssl certificaat aanvraag via LetsEncrypt
-1. Expose de todo applicatie op ```https://<studentnr>.devops-ap.be```
+01. ~~Connecteer naar je Debian Linux omgeving~~
+02. ~~Clone deze repository~~
+03. ~~Bouw een container voor de back-end. De back-end draait op NodeJS. Kies zelf een tag.~~
+04. ~~Bouw een container voor de front-end. De front-end draait op Nginx. Je maakt gebruik van nginx. Je kan gebruik maken van de standaard configuratie.~~
+05. ~~Maak een docker compose file aan die deze containers refereert. Expose je front-end op poort 80.~~
+06. Voeg Mysql toe aan je netwerk dmv een docker container. Je maakt gebruik van een mysql image. Voeg disk mappings toe zodat de state van je mysql container bewaard blijft.
+07. ~~De repository bevat een bestand init.sql. Zorg dat dit wordt uitgevoerd bij de start van de Mysql container.~~ 
+08. Configureer de API zodat die deze MySql databank gebruikt.
+09. Installeer Traefik als Reverse proxy op je omgeving.
+10. Configureer ssl certificaat aanvraag via LetsEncrypt
+11. Expose de todo applicatie op ```https://<studentnr>.devops-ap.be```

@@ -16,3 +16,8 @@
 ## DataBase
 ### Version
     mysql:8.0.29-debian
+### .env
+    Environment variables needed in .env file:
+        - MYSQL_ROOT_PASSWORD=<password>
+        - MYSQL_USER=<username>
+        - MYSQL_PASSWORD=<password>
