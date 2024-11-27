@@ -1,3 +1,39 @@
 services:
   frontend:
-    image: nginx:1.27.3
+    build: "frontend"
+    ports:
+      - "80:80"
+  backend:
+    build: "backend"
+    environment:
+      - "STORAGE=mysql"
+      - "MYSQL_HOST='database"
+      - "MYSQL_DB=mydb"
+    env_file:
+      - "./backend/.env"
+    depends_on:
+      - "database"
+  database:
+    image: "mysql:8.0.29-debian"
+    env_file:
+      - "./database/.env"
+    volumes:
+      - "./sqlScripts:/docker-entrypoint-initdb.d"
+      - "dbdata:/var/lib/mysql"
+volumes:
+  dbdata:
+networks:
+  frontend:
+  backend:
+
+    # ----- TODO -----
+    # FRONTEND
+    # - networks
+    #
+    # BACKEND
+    # - networks
+    #
+    # DATABASE
+    # - environment
+    # - networks
+    #
