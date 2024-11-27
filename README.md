@@ -4,6 +4,10 @@
 ### Version 
     node:22
     The latest node version (node:23) requires the use of 'import' instead of 'require'
+### .env
+    Environment variables needed in .env file:
+        - MYSQL_USER=<username>
+        - MYSQL_PWD=<password>
 
 ## Frontend
 ### Version
