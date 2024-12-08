@@ -34,7 +34,7 @@ De API draait in een subfolder /api.
 03. ~~Bouw een container voor de back-end. De back-end draait op NodeJS. Kies zelf een tag.~~
 04. ~~Bouw een container voor de front-end. De front-end draait op Nginx. Je maakt gebruik van nginx. Je kan gebruik maken van de standaard configuratie.~~
 05. ~~Maak een docker compose file aan die deze containers refereert. Expose je front-end op poort 80.~~
-06. Voeg Mysql toe aan je netwerk dmv een docker container. Je maakt gebruik van een mysql image. Voeg disk mappings toe zodat de state van je mysql container bewaard blijft.
+06. ~~Voeg Mysql toe aan je netwerk dmv een docker container. Je maakt gebruik van een mysql image. Voeg disk mappings toe zodat de state van je mysql container bewaard blijft.~~
 07. ~~De repository bevat een bestand init.sql. Zorg dat dit wordt uitgevoerd bij de start van de Mysql container.~~ 
 08. Configureer de API zodat die deze MySql databank gebruikt.
 09. Installeer Traefik als Reverse proxy op je omgeving.

@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS todos (
     status varchar(255) not null
 );
 
-insert into todos (id, title, status) values (UUID(), 'mijn eerste taak', 'TODO');
+INSERT INTO todos (id, title, status) VALUES (UUID(), 'mijn eerste taak', 'TODO');

@@ -4,9 +4,11 @@ services:
     ports:
       - "80:80"
     networks:
-      - "frontend"
+      - frontend
   backend:
     build: "backend"
+    ports:
+      - "3000:3000"
     environment:
       - "STORAGE=mysql"
       - "MYSQL_HOST=database"
@@ -16,8 +18,8 @@ services:
     depends_on:
       - "database"
     networks:
-      - "frontend"
-      - "backend"
+      - frontend
+      - backend
   database:
     image: "mysql:8.0.29-debian"
     ports:
@@ -29,10 +31,8 @@ services:
     volumes:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
       - "dbdata:/var/lib/mysql"
-    security_opt:
-      - "seccomp:unconfined"
     networks:
-      - "backend"
+      - backend
 volumes:
   dbdata:
 networks:
