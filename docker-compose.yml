@@ -3,6 +3,8 @@ services:
     build: "frontend"
     ports:
       - "80:80"
+    networks:
+      - "frontend"
   backend:
     build: "backend"
     environment:
@@ -13,6 +15,9 @@ services:
       - "./backend/.env"
     depends_on:
       - "database"
+    networks:
+      - "frontend"
+      - "backend"
   database:
     image: "mysql:8.0.29-debian"
     environment:
@@ -22,6 +27,8 @@ services:
     volumes:
       - "./sqlScripts:/docker-entrypoint-initdb.d"
       - "dbdata:/var/lib/mysql"
+    networks:
+      - "backend"
 volumes:
   dbdata:
 networks:
