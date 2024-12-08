@@ -9,7 +9,7 @@ services:
     build: "backend"
     environment:
       - "STORAGE=mysql"
-      - "MYSQL_HOST='database"
+      - "MYSQL_HOST=database"
       - "MYSQL_DB=mydb"
     env_file:
       - "./backend/.env"
@@ -20,13 +20,17 @@ services:
       - "backend"
   database:
     image: "mysql:8.0.29-debian"
+    ports:
+      - 3306:3306
     environment:
       - "MYSQL_DATABASE=mydb"
     env_file:
       - "./database/.env"
     volumes:
-      - "./sqlScripts:/docker-entrypoint-initdb.d"
+      - "./sqlScripts/:/docker-entrypoint-initdb.d/"
       - "dbdata:/var/lib/mysql"
+    security_opt:
+      - "seccomp:unconfined"
     networks:
       - "backend"
 volumes:
