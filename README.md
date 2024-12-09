@@ -13,6 +13,9 @@
 ### Version
     nginx:1.27.3
 
+### Nginx.conf
+    Route naar API gedefinieerd
+
 ## DataBase
 ### Version
     mysql:8.0.29-debian
