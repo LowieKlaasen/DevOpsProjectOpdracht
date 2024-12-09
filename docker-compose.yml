@@ -1,4 +1,9 @@
 services:
+  # reverse-proxy:
+  #   image: "traefik:v3.2"
+  #   ports:
+  #     - "443:443"
+  #     - "80:80"
   frontend:
     build: "frontend"
     ports:
