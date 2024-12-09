@@ -1,0 +1,10 @@
+http:
+  routers:
+    to-whoami:
+      rule: "Host(`example.localhost`) && PathPrefix(`/whoami/`)"
+      service: whoami
+  services:
+    whoami:
+      loadBalancer:
+        servers:
+        - url: http://whoami:80

@@ -1,8 +1,10 @@
 services:
   reverse-proxy:
-    image: "traefik:v3.2"
+    image: traefik:v3.2
+    command: --api.insecure=true --providers.docker
     ports:
-      - "443:443"
       - "80:80"
-    labels:
-      - "traefik.http.routers.dashboard.rule=Host(`traefik.example.org`)"
+      - "8080:8080" # web UI, kan door api.insecure=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /traefik/config.yml:/etc/traefik/config.yml
