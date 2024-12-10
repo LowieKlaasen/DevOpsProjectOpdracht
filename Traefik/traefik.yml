@@ -1,6 +1,8 @@
 entryPoints:
   web:
-    address: :8081
+    address: :80
+api:
+  insecure: true
 providers:
   file:
     filename: /etc/traefik/traefik.yml

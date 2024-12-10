@@ -1,10 +1,10 @@
 http:
   routers:
-    to-whoami:
-      rule: "Host(`example.localhost`) && PathPrefix(`/whoami/`)"
+    to-service:
+      rule: "Host(`example.localhost`) && PathPrefix(`/service/`)"
       service: whoami
   services:
-    whoami:
+    serviceNaam:
       loadBalancer:
         servers:
-        - url: http://whoami:80
+        - url: http://dockerContainer:80
