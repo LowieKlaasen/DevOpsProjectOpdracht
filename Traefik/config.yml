@@ -1,10 +1,10 @@
 http:
   routers:
-    to-service:
-      rule: "Host(`example.localhost`) && PathPrefix(`/service/`)"
-      service: whoami
+    to-application:
+      rule: "Host(`application.localhost`)" # && PathPrefix(`/todo/`)"
+      service: frontend
   services:
-    serviceNaam:
+    frontend:
       loadBalancer:
         servers:
-        - url: http://dockerContainer:80
+        - url: http://frontend:80/

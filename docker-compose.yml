@@ -6,12 +6,13 @@ services:
   #     - "80:80"
   frontend:
     build: "frontend"
-    ports:
-      - "80:80"
+    # ports:
+    #   - "80:80"
     depends_on:
       - "backend"
     networks:
-      - frontend
+      - "traefik-network"
+      - "frontend"
   backend:
     build: "backend"
     ports:
@@ -25,8 +26,9 @@ services:
     depends_on:
       - "database"
     networks:
-      - frontend
-      - backend
+      - "frontend"
+      - "backend"
+      # - "traefik-network"
   database:
     image: "mysql:8.0.29-debian"
     ports:
@@ -39,21 +41,12 @@ services:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
       - "dbdata:/var/lib/mysql"
     networks:
-      - backend
+      - "backend"
+      # - "traefik-network"
 volumes:
   dbdata:
 networks:
   frontend:
   backend:
-
-    # ----- TODO -----
-    # FRONTEND
-    # - networks
-    #
-    # BACKEND
-    # - networks
-    #
-    # DATABASE
-    # - environment
-    # - networks
-    #
+  traefik-network:
+    external: true

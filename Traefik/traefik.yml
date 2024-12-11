@@ -4,5 +4,6 @@ entryPoints:
 api:
   insecure: true
 providers:
+  docker: {}
   file:
-    filename: /etc/traefik/traefik.yml
+    filename: /etc/traefik/config.yml
