@@ -24,3 +24,6 @@
         - MYSQL_ROOT_PASSWORD=<password>
         - MYSQL_USER=<username>
         - MYSQL_PASSWORD=<password>
+
+## Docker
+    extern docker netwerk traefik-netwerk nodig

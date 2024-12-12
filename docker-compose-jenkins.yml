@@ -1,0 +1,20 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:jdk17
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../../../ssh:/home/jenkins/.ssh
+    labels:
+      - "traefik.http.routers.jenkins.tls=true"
+      - "traefik.http.routers.jenkins.tls.certresolver=letsencrypt"
+      # - "traefik.http.services.jenkins.loadbalancer.server.port=8080"
+    networks:
+      - traefik-network
+volumes:
+  jenkins-data:
+networks:
+  traefik-network:
+    external: true

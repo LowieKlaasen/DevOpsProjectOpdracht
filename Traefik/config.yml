@@ -1,13 +1,24 @@
 http:
   routers:
-    # to-application:
-    #   rule: "Host(`application.188.245.228.109`)" # && PathPrefix(`/todo/`)"
-    #   service: frontend
+    to-traefik:
+      rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
+      service: reverse-proxy
     to-application:
-      rule: "Host(`188.245.228.109`)" # && PathPrefix(`/todo/`)"
+      rule: "Host(`188.245.228.109`)"
       service: frontend
+    to-jenkins:
+      rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins`)"
+      service: jenkins
   services:
     frontend:
       loadBalancer:
         servers:
         - url: http://frontend:80/
+    reverse-proxy:
+      loadBalancer:
+        servers:
+        - url: http://reverse-proxy:8080/
+    jenkins:
+      loadBalancer:
+        servers:
+        - url: http://jenkins:8080/

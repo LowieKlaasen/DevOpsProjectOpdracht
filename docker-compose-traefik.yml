@@ -3,7 +3,7 @@ services:
     image: traefik:v3.2
     ports:
       - "80:80"
-      - "8080:8080" # web UI, kan door api.insecure=true
+      # - "8080:8080" # web UI, kan door api.insecure=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./Traefik/traefik.yml:/etc/traefik/traefik.yml
