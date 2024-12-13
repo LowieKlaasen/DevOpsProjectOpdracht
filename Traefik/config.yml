@@ -1,8 +1,8 @@
 http:
   routers:
-    to-traefik:
-      rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
-      service: reverse-proxy
+    # to-traefik:
+    #   rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
+    #   service: reverse-proxy
     to-application:
       rule: "Host(`188.245.228.109`) && PathPrefix(`/todo`)"
       service: frontend
@@ -10,6 +10,12 @@ http:
       rule: "Host(`188.245.228.109`)"
       # rule: "Host(`188.245.228.109`) && PathPrefix(`/login`)"
       service: jenkins
+    webui:
+      rule: "PathPrefix(`/dashboard`)"
+      service: reverse-proxy
+    api:
+      rule: "PathPrefix(`/api`)"
+      service: reverse-proxy
   services:
     frontend:
       loadBalancer:
