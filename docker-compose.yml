@@ -10,7 +10,6 @@ services:
     #   - "80:80"
     depends_on:
       - "backend"
-    # Dit is voor een test
     networks:
       - "traefik-network"
       - "frontend"
