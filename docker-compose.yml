@@ -18,9 +18,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      STORAGE: "mysql"
-      MYSQL_HOST: "database"
-      MYSQL_DB: "mydb"
+      - "STORAGE=mysql"
+      - "MYSQL_HOST=database"
+      - "MYSQL_DB=mydb"
       # MYSQL_USER: "${MYSQL_USER}"
       # MYSQL_PWD: "${MYSQL_PASSWORD}"
       # env_file:
@@ -36,7 +36,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: "mydb"
+      - "MYSQL_DATABASE=mydb"
       # MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       # MYSQL_USER: "${MYSQL_USER}"
       # MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
