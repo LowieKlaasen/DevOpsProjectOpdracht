@@ -13,7 +13,7 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/api/todos', todo.getTodos);
+app.get('/todo-api/todos', todo.getTodos);
 app.post('/api/todos', todo.addTodo);
 app.put('/api/todos/:id', todo.updateTodo);
 app.delete('/api/todos/:id', todo.deleteTodo)
