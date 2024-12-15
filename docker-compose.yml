@@ -42,7 +42,7 @@ services:
       - "dbdata:/var/lib/mysql"
     networks:
       - "backend"
-      - "traefik-network"
+      # - "traefik-network"
 volumes:
   dbdata:
 networks:
