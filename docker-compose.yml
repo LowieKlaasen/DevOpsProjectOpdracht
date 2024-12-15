@@ -21,10 +21,10 @@ services:
       STORAGE: "mysql"
       MYSQL_HOST: "database"
       MYSQL_DB: "mydb"
-      MYSQL_USER: "${MYSQL_USER}"
-      MYSQL_PWD: "${MYSQL_PASSWORD}"
-    # env_file:
-    #   - "./backend/.env"
+      # MYSQL_USER: "${MYSQL_USER}"
+      # MYSQL_PWD: "${MYSQL_PASSWORD}"
+      # env_file:
+      #   - "./backend/.env"
     depends_on:
       - "database"
       #Test
