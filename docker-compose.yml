@@ -21,7 +21,6 @@ services:
       - STORAGE: "mysql"
       - MYSQL_HOST: "database"
       - MYSQL_DB: "mydb"
-      # Test
       - MYSQL_USER: "${MYSQL_USER}"
       - MYSQL_PWD: "${MYSQL_PASSWORD}"
     # env_file:
