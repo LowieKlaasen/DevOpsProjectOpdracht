@@ -27,7 +27,6 @@ services:
       #   - "./backend/.env"
     depends_on:
       - "database"
-      #Test
     networks:
       - "frontend"
       - "backend"
