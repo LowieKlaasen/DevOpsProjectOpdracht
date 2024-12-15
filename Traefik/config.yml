@@ -8,7 +8,7 @@ http:
       rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       service: frontend
     api:
-      rule: "PathPrefix(`/api`)"
+      rule: "PathPrefix(`/todo-api`)"
       service: backend
     to-jenkins:
       rule: "Host(`188.245.228.109`)"
