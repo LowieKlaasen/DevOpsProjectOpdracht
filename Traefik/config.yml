@@ -7,6 +7,9 @@ http:
       # rule: "Host(`188.245.228.109`)"
       rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       service: frontend
+    api:
+      rule: "PathPrefix(`/api`)"
+      service: backend
     to-jenkins:
       rule: "Host(`188.245.228.109`)"
       # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
@@ -15,9 +18,6 @@ http:
       # rule: "Host(`188.245.228.109`) && 
       rule: "PathPrefix(`/dashboard/`)"
       service: reverse-proxy
-    api:
-      rule: "PathPrefix(`/api`)"
-      service: backend
   services:
     frontend:
       loadBalancer:
