@@ -22,7 +22,7 @@ http:
     frontend:
       loadBalancer:
         servers:
-        - url: http://frontend:80/todo
+        - url: http://frontend:80/
     reverse-proxy:
       loadBalancer:
         servers:
