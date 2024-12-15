@@ -38,7 +38,7 @@ services:
     # env_file:
     #   - "./database/.env"
     volumes:
-      - "./sqlScripts/:/docker-entrypoint-initdb.d/"
+      - "./sqlScripts/:/docker-entrypoint-initdb.d/todo"
       - "dbdata:/var/lib/mysql"
     networks:
       - "backend"
