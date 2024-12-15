@@ -36,7 +36,6 @@ services:
     ports:
       - 3306:3306
     environment:
-      # Test
       - MYSQL_DATABASE: "mydb"
       - MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       - MYSQL_USER: "${MYSQL_USER}"
