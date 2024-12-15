@@ -4,12 +4,12 @@ http:
     #   rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
     #   service: reverse-proxy
     to-application:
-      rule: "Host(`188.245.228.109`)"
-      # rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
+      # rule: "Host(`188.245.228.109`)"
+      rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       service: frontend
     to-jenkins:
-      # rule: "Host(`188.245.228.109`)"
-      rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
+      rule: "Host(`188.245.228.109`)"
+      # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
       service: jenkins
     webui:
       # rule: "Host(`188.245.228.109`) && 
