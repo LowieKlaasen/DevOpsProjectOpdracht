@@ -18,11 +18,11 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - "STORAGE=mysql"
-      - "MYSQL_HOST=database"
-      - "MYSQL_DB=mydb"
-      - "MYSQL_USER=MYSQL_USER"
-      - "MYSQL_PWD=MYSQL_PASSWORD"
+      - STORAGE: "mysql"
+      - MYSQL_HOST: "database"
+      - MYSQL_DB: "mydb"
+      - MYSQL_USER: "${MYSQL_USER}"
+      - MYSQL_PWD: "${MYSQL_PASSWORD}"
     # env_file:
     #   - "./backend/.env"
     depends_on:
