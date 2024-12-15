@@ -4,16 +4,16 @@ http:
     #   rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
     #   service: reverse-proxy
     to-application:
-      rule: "Host(`188.245.228.109`)"
-      # rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
+      # rule: "Host(`188.245.228.109`)"
+      rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       service: frontend
     # api:
     #   rule: "Host(`188.245.228.109`) && PathPrefix(`/api/`)"
     #   service: backend
-    # to-jenkins:
-    #   rule: "Host(`188.245.228.109`)"
-    #   # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
-    #   service: jenkins
+    to-jenkins:
+      rule: "Host(`188.245.228.109`)"
+      # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
+      service: jenkins
     webui:
       # rule: "Host(`188.245.228.109`) && 
       rule: "PathPrefix(`/dashboard/`)"
@@ -27,10 +27,10 @@ http:
       loadBalancer:
         servers:
         - url: http://reverse-proxy:8080/
-    # jenkins:
-    #   loadBalancer:
-    #     servers:
-    #     - url: http://jenkins:8080/
+    jenkins:
+      loadBalancer:
+        servers:
+        - url: http://jenkins:8080/
     # backend:
     #   loadBalancer:
     #     servers:
