@@ -22,7 +22,7 @@
         const myUL = document.getElementById("myUL")
         function refreshList() {
             $.ajax({
-                url: '/api/todos',
+                url: '/todo-api/todos',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data) {
