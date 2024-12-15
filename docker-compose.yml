@@ -38,11 +38,11 @@ services:
       - 3306:3306
     environment:
       MYSQL_DATABASE: "mydb"
-      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
-      MYSQL_USER: "${MYSQL_USER}"
-      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
-    # env_file:
-    #   - "./database/.env"
+      # MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      # MYSQL_USER: "${MYSQL_USER}"
+      # MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      # env_file:
+      #   - "./database/.env"
     volumes:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
       - "dbdata:/var/lib/mysql"
