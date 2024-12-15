@@ -14,13 +14,13 @@ app.use((req, res, next) => {
 })
 
 app.get('/todo-api/todos', todo.getTodos);
-app.post('/api/todos', todo.addTodo);
-app.put('/api/todos/:id', todo.updateTodo);
-app.delete('/api/todos/:id', todo.deleteTodo)
+app.post('/todo-api/todos', todo.addTodo);
+app.put('/todo-api/todos/:id', todo.updateTodo);
+app.delete('/todo-api/todos/:id', todo.deleteTodo)
 
 app.post
 
-app.get('/api/verify', verify.verify);
+app.get('/todo-api/verify', verify.verify);
 
 app.listen(port, () => {
   console.log(`Todo api listening on port ${port}`)
