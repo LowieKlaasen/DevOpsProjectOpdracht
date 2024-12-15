@@ -30,7 +30,7 @@ services:
     networks:
       - "frontend"
       - "backend"
-      # - "traefik-network"
+      - "traefik-network"
   database:
     image: "mysql:8.0.29-debian"
     ports:

@@ -17,7 +17,7 @@ http:
       service: reverse-proxy
     api:
       rule: "PathPrefix(`/api`)"
-      service: reverse-proxy
+      service: backend
   services:
     frontend:
       loadBalancer:
@@ -31,3 +31,7 @@ http:
       loadBalancer:
         servers:
         - url: http://jenkins:8080/
+    backend:
+      loadBalancer:
+        servers:
+        - url: http://backend:3000/
