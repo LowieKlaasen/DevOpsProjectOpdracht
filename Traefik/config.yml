@@ -7,9 +7,9 @@ http:
       # rule: "Host(`188.245.228.109`)"
       rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       service: frontend
-    api:
-      rule: "PathPrefix(`/api`)"
-      service: backend
+    # api:
+    #   rule: "Host(`188.245.228.109`) && PathPrefix(`/api/`)"
+    #   service: backend
     to-jenkins:
       rule: "Host(`188.245.228.109`)"
       # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
@@ -31,7 +31,7 @@ http:
       loadBalancer:
         servers:
         - url: http://jenkins:8080/
-    backend:
-      loadBalancer:
-        servers:
-        - url: http://backend:3000
+    # backend:
+    #   loadBalancer:
+    #     servers:
+    #     - url: http://backend:3000/api/
