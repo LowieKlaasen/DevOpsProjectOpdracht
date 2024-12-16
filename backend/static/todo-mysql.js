@@ -6,10 +6,10 @@ var pool  = mysql.createPool({
     host            : process.env.MYSQL_HOST,
     // user            : process.env.MYSQL_USER,
     // user            : "lowie",
-    user            : process.MYSQL_USER,
+    user            : MYSQL_USER,
     // password        : process.env.MYSQL_PWD,
     // password        : "a-secret-pw",
-    password        : process.MYSQL_PWD,
+    password        : MYSQL_PWD,
     database        : process.env.MYSQL_DB,
   });
  
