@@ -19,19 +19,19 @@ services:
       - "3000:3000"
     environment:
       STORAGE: mysql
-      MYSQL_HOST: database3
+      MYSQL_HOST: database
       MYSQL_DB: mydb
       # MYSQL_USER: ${MYSQL_USER}
       # MYSQL_PWD: ${MYSQL_PASSWORD}
       # env_file:
       #   - "./backend/.env"
     depends_on:
-      - "database3"
+      - "database"
     networks:
       - "frontend"
       - "backend"
       - "traefik-network"
-  database3:
+  database:
     image: "mysql:8.0.29-debian"
     ports:
       - 3306:3306
@@ -44,12 +44,12 @@ services:
       #   - "./database/.env"
     volumes:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
-      - "dbdata3:/var/lib/mysql"
+      - "dbdata:/var/lib/mysql"
     networks:
       - "backend"
       # - "traefik-network"
 volumes:
-  dbdata3:
+  dbdata:
 networks:
   frontend:
   backend:
