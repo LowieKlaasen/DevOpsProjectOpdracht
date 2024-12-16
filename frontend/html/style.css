@@ -68,13 +68,13 @@ padding: 12px 16px 12px 16px;
 }
 
 .close:hover {
-background-color: #f44336;
+background-color: lightskyblue;
 color: white;
 }
 
 /* Style the header */
 .header {
-background-color: lightskyblue;
+background-color: #f44336;
 padding: 30px 40px;
 color: white;
 text-align: center;
