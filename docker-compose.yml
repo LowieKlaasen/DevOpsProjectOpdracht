@@ -40,9 +40,6 @@ services:
       # MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       # MYSQL_USER: ${MYSQL_USER}
       # MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_ROOT_PASSWORD: secret-root-pw
-      MYSQL_USER: lowie
-      MYSQL_PASSWORD: a-secret-pw
       # env_file:
       #   - "./database/.env"
     volumes:
