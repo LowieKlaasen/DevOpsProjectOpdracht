@@ -44,12 +44,12 @@ services:
       #   - "./database/.env"
     volumes:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
-      - "dbdata2:/var/lib/mysql"
+      - "dbdata:/var/lib/mysql"
     networks:
       - "backend"
       # - "traefik-network"
 volumes:
-  dbdata2:
+  dbdata:
 networks:
   frontend:
   backend:
