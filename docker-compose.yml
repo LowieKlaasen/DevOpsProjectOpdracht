@@ -40,8 +40,8 @@ services:
       # MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       # MYSQL_USER: ${MYSQL_USER}
       # MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    env_file:
-      - "./database/.env"
+      # env_file:
+      #   - "./database/.env"
     volumes:
       - "./sqlScripts/:/docker-entrypoint-initdb.d/"
       - "dbdata:/var/lib/mysql"
