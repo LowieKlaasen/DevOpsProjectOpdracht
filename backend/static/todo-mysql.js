@@ -4,12 +4,12 @@ var mysql      = require('mysql2/promise');
 var pool  = mysql.createPool({
     connectionLimit : 10,
     host            : process.env.MYSQL_HOST,
-    // user            : process.env.MYSQL_USER,
+    user            : process.env.MYSQL_USER,
     // user            : "lowie",
-    user            : "${MYSQL_USER}",
-    // password        : process.env.MYSQL_PWD,
+    // user            : "${MYSQL_USER}",
+    password        : process.env.MYSQL_PWD,
     // password        : "a-secret-pw",
-    password        : "${MYSQL_PWD}",
+    // password        : "${MYSQL_PWD}",
     database        : process.env.MYSQL_DB,
   });
  
