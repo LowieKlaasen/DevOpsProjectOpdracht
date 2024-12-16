@@ -38,5 +38,5 @@ De API draait in een subfolder /api.
 07. ~~De repository bevat een bestand init.sql. Zorg dat dit wordt uitgevoerd bij de start van de Mysql container.~~ 
 08. ~~Configureer de API zodat die deze MySql databank gebruikt.~~
 09. ~~Installeer Traefik als Reverse proxy op je omgeving.~~
-10. Configureer ssl certificaat aanvraag via LetsEncrypt
+10. ~~Configureer ssl certificaat aanvraag via LetsEncrypt~~
 11. ~~Expose de todo applicatie (op ```https://<studentnr>.devops-ap.be```)~~
