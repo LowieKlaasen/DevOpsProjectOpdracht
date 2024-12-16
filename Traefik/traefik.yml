@@ -1,9 +1,17 @@
 entryPoints:
   web:
     address: :80
+  websecure:
+    address: :443
 api:
-  insecure: true
+  insecure: false
 providers:
   docker: {}
   file:
     filename: /etc/traefik/config.yml
+certificatesresolvers:
+  myresolver:
+    acme:
+      tlschallenge: true
+      email: lowie.klaasen@gmail.com
+      storage: /letsencrypt/acme.json

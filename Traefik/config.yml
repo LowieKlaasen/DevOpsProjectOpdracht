@@ -1,25 +1,26 @@
 http:
   routers:
-    # to-traefik:
-    #   rule: "Host(`188.245.228.109`) && PathPrefix(`/traefik`)"
-    #   service: reverse-proxy
+    to-traefik:
+      rule: "Host(`www.traefik.klaasenlowie.live`)"
+      service: reverse-proxy
+      entrypoints: websecure
+      tls:
+        certresolver: myresolver
     to-application:
-      # rule: "Host(`188.245.228.109`)"
-      # rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
       rule: "Host(`www.todo.klaasenlowie.live`)"
       service: frontend
+      entrypoints: websecure
+      tls:
+        certresolver: myresolver
     # api:
     #   rule: "Host(`www.klaasenlowie.live`) && PathPrefix(`/api`)"
     #   service: backend
     to-jenkins:
-      # rule: "Host(`188.245.228.109`)"
       rule: "Host(`www.jenkins.klaasenlowie.live`)"
-      # rule: "Host(`188.245.228.109`) && PathPrefix(`/jenkins/`)"
       service: jenkins
-    webui:
-      # rule: "Host(`188.245.228.109`) && 
-      rule: "PathPrefix(`/dashboard/`)"
-      service: reverse-proxy
+      entrypoints: websecure
+      tls:
+        certresolver: myresolver
   services:
     frontend:
       loadBalancer:
@@ -33,7 +34,3 @@ http:
       loadBalancer:
         servers:
         - url: http://jenkins:8080/
-    # backend:
-    #   loadBalancer:
-    #     servers:
-    #     - url: http://backend:3000/api/

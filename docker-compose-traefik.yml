@@ -3,11 +3,16 @@ services:
     image: traefik:v3.2
     ports:
       - "80:80"
+      - "443:443"
       # - "8080:8080" # web UI, kan door api.insecure=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./Traefik/traefik.yml:/etc/traefik/traefik.yml
       - ./Traefik/config.yml:/etc/traefik/config.yml
+      - ./letsencrypt:/letsencrypt
+    labels:
+      - "traefik.http.routers.jenkins.tls=true"
+      - "traefik.http.routers.jenkins.tls.certresolver=letsencrypt"
     networks:
       - traefik-network
 networks:
