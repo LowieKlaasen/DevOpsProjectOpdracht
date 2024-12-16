@@ -6,10 +6,10 @@ http:
     to-application:
       # rule: "Host(`188.245.228.109`)"
       # rule: "Host(`188.245.228.109`) && PathPrefix(`/todo/`)"
-      rule: "Host(`www.klaasenlowie.live`)"
+      rule: "Host(`www.todo.klaasenlowie.live`)"
       service: frontend
     # api:
-    #   rule: "Host(`188.245.228.109`) && PathPrefix(`/api/`)"
+    #   rule: "Host(`www.klaasenlowie.live`) && PathPrefix(`/api`)"
     #   service: backend
     to-jenkins:
       # rule: "Host(`188.245.228.109`)"
