@@ -31,10 +31,10 @@
 
 ## Setup
 1. Create extern docker network 'traefik-network'
-2. Start up the containers for jenkins & traefik
-        **Traefik**
-        docker compose -f docker-compose-traefik.yml up -d
-        **Jenkins**
+2. Start up the containers for jenkins & traefik<br>
+        **Traefik**<br>
+        docker compose -f docker-compose-traefik.yml up -d<br>
+        **Jenkins**<br>
         docker compose -f docker-compose-jenkins.yml up -d
 3. Start up application, 2 options:
     - Push the git repository
