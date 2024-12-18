@@ -26,4 +26,16 @@
         - MYSQL_PASSWORD=<password>
 
 ## Docker
-    extern docker netwerk traefik-netwerk nodig
+    Need an extern docker network 'traefik-network'
+    (Aanmaken met 'docker network create traefik-network')
+
+## Setup
+1. Create extern docker network 'traefik-network'
+2. Start up the containers for jenkins & traefik
+        **Traefik**
+        docker compose -f docker-compose-traefik.yml up -d
+        **Jenkins**
+        docker compose -f docker-compose-jenkins.yml up -d
+3. Start up application, 2 options:
+    - Push the git repository
+    - Open jenkins (https://www.jenkins.klaasenlowie.live) and build project via interface
