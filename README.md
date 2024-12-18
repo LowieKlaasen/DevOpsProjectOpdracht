@@ -39,3 +39,5 @@
 3. Start up application, 2 options:
     - Push the git repository
     - Open jenkins (https://www.jenkins.klaasenlowie.live) and build project via interface
+4. The applicatin is accessible via https://www.todo.klaasenlowie.live
+5. You can change the domain name in the Traefik/config.yml file.
